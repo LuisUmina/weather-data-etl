@@ -1,6 +1,6 @@
 import datetime
 
-def transform_data(data):
+def process_weather_data(data):
     transformed_data = []
     for city_data in data:
         try:

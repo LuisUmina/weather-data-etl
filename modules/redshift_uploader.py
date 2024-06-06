@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Table, Column, Integer, String, Float, MetaData
 from sqlalchemy.dialects.postgresql import TIMESTAMP
 
-def load_data_to_redshift(df, redshift_table, redshift_conn_str):
+def upload_to_redshift(df, redshift_table, redshift_conn_str):
     engine = create_engine(redshift_conn_str)
     metadata = MetaData()
     
@@ -41,4 +41,4 @@ def load_data_to_redshift(df, redshift_table, redshift_conn_str):
             )
             connection.execute(insert_stmt)
 
-    print(f"Datos cargados en la tabla {redshift_table}")
+    print(f"Data loaded into table correctly {redshift_table}")
